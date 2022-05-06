@@ -1,0 +1,155 @@
+.Main_DisplayOne {
+  padding: 17px;
+  /* width: 100%; */
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.Title_NameOne {
+  justify-content: left !important;
+}
+
+.Box_One {
+  padding: 10px;
+  height: 410px;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.Box_One,
+.Box_Two,
+.Box_Three {
+  /* width: 300px; */
+  overflow: hidden;
+  z-index: 1 !important;
+  background-color: #fff;
+}
+
+.Box_Two {
+  padding: 11px;
+}
+
+.Item_BoxOne,
+.Item_BoxTwo,
+.Item_BoxThree,
+.Item_BoxFour {
+  display: flex;
+}
+
+/* .Item_BoxThree {
+  justify-content: space-between !important;
+  column-gap: 5px;
+} */
+
+.Item_BoxFour {
+  margin-bottom: 52px;
+}
+
+.Image_One {
+  height: 500px;
+}
+
+.Product_Five {
+  padding: 5px;
+  background-color: rgba(0, 164, 180, 0.05);
+  width: 130px;
+  height: 129px;
+  margin-right: 2px;
+  margin-top: 2px;
+  /* border: 1px solid black; */
+}
+
+.Image_Two {
+  height: 113px;
+  width: 140px;
+}
+
+.Box_Three {
+  padding: 5px;
+}
+
+.Box_Four,
+.Box_Five,
+.Box_Six,
+.Box_Seven {
+  margin-top: 20px;
+  padding: 4px;
+}
+
+.Product_Six {
+  padding: 10px;
+}
+
+.Image_Three {
+  height: 320px;
+  width: 270px;
+}
+
+.Title_BoxTwo {
+  margin-left: -130px;
+}
+
+.Title_BoxOne {
+  margin-left: -110px;
+  margin-top: 10px;
+}
+
+.Shop_Now {
+  float: left;
+  margin-top: 3px;
+  text-decoration: none;
+  color: #007185;
+}
+
+.Title_BoxThree{
+  float: left;
+}
+
+
+.Box_Five {
+  margin-left: -5px;
+}
+
+.carousel {
+  background-color: #fff;
+  padding: 0px 25px;
+  height: auto;
+  
+}
+
+
+.carousel__title{
+  padding-top: 15px;
+  text-align: left;
+}
+
+
+
+.carousel_image{
+  width: 208px;
+  height: 200px;
+  margin-bottom: 15px;
+}
+
+.single_carousel{
+  z-index: 1;
+  background-color: #fff;
+  width: 250px;
+  height: 430px;
+  padding: 0 24px;
+  text-align: left;
+  align-self: center;
+}
+
+.carousel__imageTwo{
+  height: 200px;
+  width: 240px;
+  object-fit: fill;
+
+}
+
+

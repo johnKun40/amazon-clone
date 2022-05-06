@@ -1,0 +1,87 @@
+.header {
+  background: #232f3e;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  color: #fff;
+}
+
+.header__logo {
+  width: 100px;
+  object-fit: contain;
+  margin: 18px 20px 0;
+}
+
+.header__search {
+  display: flex;
+  flex: 1;
+  align-self: center;
+  border-radius: 24px;
+}
+
+.header__searchInput {
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.header__searchIcon {
+  padding: 5px;
+  background: orange;
+  height: 32.7px !important;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navBar__option {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+.navBar__optionOne {
+  font-size: 14px;
+}
+
+.navBar__optionTwo {
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.navBar__option1 {
+  display: flex;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.header__cartIcon {
+  height: 50px !important;
+  margin-right: 5px;
+  font-size: 40px !important;
+}
+
+.navBar__counter {
+  align-self: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.header__link{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* background-image: linear-gradient(to right bottom, rgba(127,255,212,0.8), rgba(0,255,255,0.8)), url(img/constheader.jpg); */

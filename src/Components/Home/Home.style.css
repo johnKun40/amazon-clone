@@ -1,0 +1,49 @@
+.bgimg_home {
+  
+  width: 100%;
+  z-index: 1;
+  margin-bottom: -300px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+
+/* .home {
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1500px;
+} */
+
+.home_row {
+  display: flex;
+  z-index: 1;
+  justify-content: space-between;
+  margin-bottom: -10px;
+  background-color: transparent !important;
+}
+
+.home_row2 {
+  display: flex;
+  z-index: 1;
+  justify-content: space-between;
+  margin-bottom: -10px;
+}
+
+.home_row3 {
+  z-index: 1;
+  padding: 0 15px;
+  margin-bottom: 25px;
+}
+
+.home_row4{
+  padding: 2px;
+  padding-right: 15px;
+  justify-content: space-between;
+  display: flex;
+  z-index: 1;
+  margin-bottom: -10px;
+  margin-top: -15px;
+}
+
+
