@@ -1,9 +1,8 @@
 import React from "react";
 import './sign-in.css';
-import SignUp from "./sign-up";
-import FormInput from "./form-input";
-import CustomButton from "./custom-button";
-import { signInWithGoogle } from "./firebase";
+import FormInput from "../form-input";
+import CustomButton from "../custom-button";
+import { signInWithGoogle } from "../firebase";
 
 
 class SignIn extends React.Component{
@@ -42,9 +41,6 @@ class SignIn extends React.Component{
                 </form>
                 </div>
                 
-                <div>
-                <SignUp/>
-                </div>
 
             </div>
         )

@@ -11,12 +11,13 @@
     display: block;
     width: 100%;
     border: none;
-    border-radius: 0;
-    border-bottom: 1px solid grey;
+    border-radius: 10;
+    border: 1px solid grey;
 }
 
 .form-input:focus{
     outline: none;
+    box-shadow: 1px 1px 1px 5px rgba(255, 153, 0, 0.4);
 }
 
 input[type="password"]{

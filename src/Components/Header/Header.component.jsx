@@ -4,7 +4,8 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from "react-router-dom";
 import { auth } from '../../firebase';
 import './Header.style.css';
-// import App from "../../App";
+
+//import App from "../../App";
 
 function Header({currentUser}) {
     return(
@@ -23,14 +24,15 @@ function Header({currentUser}) {
                     <span className="navBar__optionOne">{currentUser.displayName}</span>
                     <span className="navBar__optionTwo" onClick={() => auth.signOut()}>Sign Out</span>
                 </div> :
-                <Link to={'sign-in'}className="header__link">
+                <Link to={'sign-page'} className="header__link">
                 <div className="navBar__option">
                     <span className="navBar__optionOne">Hi,</span>
                     <span className="navBar__optionTwo">Sign In</span>
                 </div>
-                </Link> }
+                </Link> 
+                }
 
-
+                        
                 
                 <div className="navBar__option">
                     <span className="navBar__optionOne">Return</span>

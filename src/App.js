@@ -4,9 +4,9 @@ import Home from './Components/Home/Home.component';
 import FooterComponent from './Components/Footer/Footer.component';
 import {Routes, Route} from "react-router-dom";
 import './App.css';
-import SignIn from './sign-in';
-import SignUp from './sign-up';
+import SignPage from './Pages/sigin-in-and-sign-up-page';
 import { auth, createUserProfileDocument } from './firebase';
+import { onSnapshot } from "firebase/firestore";
 
 export default class App extends Component {
 
@@ -20,7 +20,7 @@ export default class App extends Component {
   componentDidMount(){
   //   auth.onAuthStateChanged(user => {
   //     this.setState({currentUser:user})
-  //    // console.log(user)
+  //     console.log(user)
   //    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
   //      createUserProfileDocument(user);
   //    })
@@ -34,18 +34,21 @@ this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
   if(userAuth) {
     const userRef = createUserProfileDocument(userAuth)
     
-    userRef.onsnapShot(snapShot => {
+    userRef.onSnapshot(snapShot => {
       this.setState({
         currentUser: {
           id:snapShot.id,
           ...snapShot.data()
         }
+        
       })
+      console.log(this.state)
     })
   }
+  this.setState({currentUser: userAuth})
 })
 }
-
+ 
   render () {
 
     return (
@@ -53,8 +56,7 @@ this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
         <Header currentUser = {this.state.currentUser} />
         <Routes>
           <Route path='/' element={<Home />}/>
-          <Route path='sign-in' element={<SignIn />} />
-          <Route path='sign-in' element={<SignUp />} />
+          <Route path='sign-page' element={<SignPage />} />
         </Routes>
         <FooterComponent></FooterComponent>
       </div>

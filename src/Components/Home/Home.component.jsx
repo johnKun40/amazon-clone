@@ -14,7 +14,9 @@ export default class Home extends Component {
         
     return(
         <div className="home">
+            <div className="bg-car">
             <BgImage id={101} image_Two={'https://m.media-amazon.com/images/I/61DUO0NqyyL._SX3000_.jpg'} image_One={'https://m.media-amazon.com/images/I/61jovjd+f9L._SX3000_.jpg'} image_Three={'https://m.media-amazon.com/images/I/711Y9Al9RNL._SX3000_.jpg'} image_Four={'https://m.media-amazon.com/images/I/71qid7QFWJL._SX3000_.jpg'} />
+            </div>
             <div className="home_row">
                 <Product id={101} image_One={'https://m.media-amazon.com/images/I/71fPSgwuPzL._AC_SY135_.jpg'} image_Two={'https://m.media-amazon.com/images/I/81A2PPbWgeL._AC_SY270_.jpg'} image_Three={'https://m.media-amazon.com/images/I/71EWRyqzw0L._AC_SY135_.jpg'}  image_Four={'https://m.media-amazon.com/images/I/91U1k4sVG1L._AC_SY135_.jpg'} card_Title={'Keep shopping for'} title_One={'Canon Camera'} title_Two={'Canon Camera'} title_Three={'Canon Camera'} title_Four={'Canon Camera'}/>
 

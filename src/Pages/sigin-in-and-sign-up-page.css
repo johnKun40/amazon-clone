@@ -1,0 +1,13 @@
+.sign-page {
+    position: relative;
+    left: 5%;
+    width: 1200px;
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    margin-top: 100px ;
+    margin-bottom: 100px;
+    justify-content: space-around !important;
+
+    
+}

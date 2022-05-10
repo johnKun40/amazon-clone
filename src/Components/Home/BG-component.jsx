@@ -12,7 +12,7 @@ const BgImage = ({id,image_One,image_Two,image_Three,image_Four}) =>{
         return (
           <div
             className={className}
-            style={{ ...style, display: "block", background: "black", padding: "5px", marginRight:"40px",zIndex:"1"}}
+            style={{ ...style, display: "block", background: "black", padding: "5px", marginRight:"40px",zIndex:"1", marginTop:"-190px"}}
             onClick={onClick}
           />
         );
@@ -23,7 +23,7 @@ const BgImage = ({id,image_One,image_Two,image_Three,image_Four}) =>{
         return (
           <div
             className={className}
-            style={{ ...style, display: "block", background: "black", padding: "5px", marginLeft:"40px",zIndex:"1" }}
+            style={{ ...style, display: "block", background: "black", padding: "5px", marginLeft:"40px",zIndex:"1", marginTop:"-190px" }}
             onClick={onClick}
           />
         );
