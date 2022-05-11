@@ -2,7 +2,7 @@ import React from "react";
 import './sign-in.css';
 import FormInput from "../form-input";
 import CustomButton from "../custom-button";
-import { signInWithGoogle } from "../firebase";
+import { auth, signInWithGoogle } from "../firebase";
 
 
 class SignIn extends React.Component{
@@ -14,9 +14,16 @@ class SignIn extends React.Component{
         }
    }
 
-   handleSubmit = event => {
+   handleSubmit = async event => {
        event.preventDefault();
-       this.setState({email: '', password: ''})
+       const {email, password} = this.state
+       
+       try{
+           await auth.signInWithEmailAndPassword(email, password);
+           this.setState({email: '', password: ''})
+       }catch(error){
+           console.log(error + "Password or Email does not exist!");
+       }
    }
 
    handleChange = event => {

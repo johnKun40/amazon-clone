@@ -1,10 +1,15 @@
 .title {
     margin: 10px 0;
 }
+
+.signin {
+    width: 450px;
+}
   
 
 .buttons{
-    width: 450px;
+
     display: flex;
     justify-content: space-between;
+    text-align: center;
 }

@@ -6,7 +6,8 @@ import {Routes, Route} from "react-router-dom";
 import './App.css';
 import SignPage from './Pages/sigin-in-and-sign-up-page';
 import { auth, createUserProfileDocument } from './firebase';
-import { onSnapshot } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
+
 
 export default class App extends Component {
 
