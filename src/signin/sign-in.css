@@ -3,13 +3,21 @@
 }
 
 .signin {
-    width: 450px;
+    width: 470px;
 }
   
 
 .buttons{
 
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.admin-link {
+    position: absolute;
+    cursor: pointer;
     text-align: center;
+    text-decoration: none;
+    top: 70%;
+    left: 70%;
 }

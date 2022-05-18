@@ -1,13 +1,14 @@
-import React from "react";
-import './sign-in.css';
+import React from 'react';
+import './sign-admin.css';
 import FormInput from "../form-input";
 import CustomButton from "../custom-button";
-import { auth, signInWithGoogle } from "../firebase";
-import { Link } from "react-router-dom";
+import { auth } from "../firebase";
+//import { useNavigate } from "react-router-dom";
 
 
 
-class SignIn extends React.Component{
+
+class AdminSign extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -16,16 +17,28 @@ class SignIn extends React.Component{
         }
    }
 
+   
+
    handleSubmit = async event => {
        event.preventDefault();
        const {email, password} = this.state
+
        
-       try{
+
+
+    if(this.state.email !== 'johnkun50@gamil.com' && this.state.password !== 'adebusola'){
+            alert('Not an admin')
+    }else{
+
            await auth.signInWithEmailAndPassword(email, password);
-           this.setState({email: '', password: ''})
-       }catch(error){
-           console.log(error + "Password or Email does not exist!");
-       }
+           this.setState({email: '', password: ''});
+           //alert('Admin logged in');
+           window.location.href = '/admin-entry';
+          
+      
+       
+
+    }
    }
 
    handleChange = event => {
@@ -35,27 +48,24 @@ class SignIn extends React.Component{
 
     render(){
         return(
-            <div className="signin">
+            <div className="admin-sign">
                 <div>
-                <h3>I already have an account</h3>
+                <h3>Admin Account</h3>
                 <span>SignIn with your email and password</span>
                 <form onSubmit={this.handleSubmit}>
                     <FormInput type={'email'}  name='email' value={this.state.email} handleChange={this.handleChange} label="email" />
                     <FormInput type={'password'} name='password' value={this.state.password} handleChange={this.handleChange} label="password"/>
                     <div className="buttons">
                     <CustomButton type={'submit'}>Sign In</CustomButton>
-                    <CustomButton type={'submit'} onClick={signInWithGoogle} isGoogleSign>Sign In With Google</CustomButton>
                     </div>
 
                 </form>
-                <Link to={'/admin-signin'} className="admin-link">
-                <a href="oo" >Sign in as an admin</a>
-                </Link>
                 </div>
+                
 
             </div>
         )
     }
 }
 
-export default SignIn;
+export default AdminSign;

@@ -6,7 +6,9 @@ import {Routes, Route} from "react-router-dom";
 import './App.css';
 import SignPage from './Pages/sigin-in-and-sign-up-page';
 import { auth, createUserProfileDocument } from './firebase';
-import { doc, getDoc } from "firebase/firestore";
+import AdminSign from './sign-admin/sign-admin';
+import AdminEntry from './sign-admin/admin-entry';
+
 
 
 export default class App extends Component {
@@ -58,6 +60,8 @@ this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='sign-page' element={<SignPage />} />
+          <Route path='/admin-signin' element={<AdminSign />} />
+          <Route path='/admin-entry' element={<AdminEntry />} />
         </Routes>
         <FooterComponent></FooterComponent>
       </div>

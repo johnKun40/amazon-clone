@@ -1,0 +1,10 @@
+.admin-sign, .admin-entry {
+    position: relative;
+    margin-left: 35%;
+    margin-top: 5%;
+    width: 450px;
+}
+
+.buttons {
+    justify-content: center;
+}

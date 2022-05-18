@@ -50,6 +50,48 @@ export const createUserProfileDocument = async (userAuth , additionalInfo) => {
 }
 
 
+export const createAdminEntryData = async (product) => {
+  //console.log('/users/'`${userAuth}`);
+  
+  //manual method
+  // console.log(firebase.doc('/users/0ga6chdIAeNebBd9kPcv/itemCard/WVISawlPnM8OvjR2PR2C'));
+
+  const productRef = firestore.doc(`products/${product.uid}`);
+
+  
+
+
+
+
+  
+  
+    //this.productId = product.uid
+    
+    const {productImage, productDetails, productPrize, productName} = product
+    const createdAt = new Date();
+
+    
+
+
+    // set users data in the database
+    try {
+      await productRef.set({
+        productImage,
+        productDetails,
+        productPrize,
+        productName,
+        createdAt
+      })
+    } catch(error){
+      console.log('Error creating user', error.message)
+    }
+  
+
+  return productRef;
+}
+
+
+
 
 //google log in authentication, sending data to firebase
 firebase.initializeApp(firebaseConfig)
