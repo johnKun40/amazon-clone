@@ -11,12 +11,15 @@ import AdminEntry from './sign-admin/admin-entry';
 
 
 
+
+
 export default class App extends Component {
 
     constructor(){
       super();
       this.state = {
-          currentUser: null
+          currentUser: null,
+          addedProduct: null
     } 
   }
 
@@ -50,6 +53,9 @@ this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
   }
   this.setState({currentUser: userAuth})
 })
+
+
+
 }
  
   render () {

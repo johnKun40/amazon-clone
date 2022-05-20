@@ -14,6 +14,8 @@ const firebaseConfig = {
     measurementId: "G-X7YFRED70M"
   };
 
+//  export const db = firebase.firestore();
+
 export const createUserProfileDocument = async (userAuth , additionalInfo) => {
   //console.log('/users/'`${userAuth}`);
   
@@ -50,45 +52,31 @@ export const createUserProfileDocument = async (userAuth , additionalInfo) => {
 }
 
 
-export const createAdminEntryData = async (product) => {
-  //console.log('/users/'`${userAuth}`);
+// export const createAdminEntryData = async (productAuth, additionalInfo) => {
   
-  //manual method
-  // console.log(firebase.doc('/users/0ga6chdIAeNebBd9kPcv/itemCard/WVISawlPnM8OvjR2PR2C'));
-
-  const productRef = firestore.doc(`products/${product.uid}`);
-
+//   const productRef = firestore.doc(`products/${productAuth.uid}`);
   
-
-
-
-
-  
-  
-    //this.productId = product.uid
+//     //this.productId = product.uid
     
-    const {productImage, productDetails, productPrize, productName} = product
-    const createdAt = new Date();
+//     const {productImage, productDetails, productPrize, productName} = productAuth
+//     const createdAt = new Date();
 
-    
-
-
-    // set users data in the database
-    try {
-      await productRef.set({
-        productImage,
-        productDetails,
-        productPrize,
-        productName,
-        createdAt
-      })
-    } catch(error){
-      console.log('Error creating user', error.message)
-    }
+//     // set users data in the database
+//     try {
+//       await productRef.set({
+//         productImage,
+//         productDetails,
+//         productPrize,
+//         productName,
+//         createdAt,
+//         ...additionalInfo
+//       })
+//     } catch(error){
+//       console.log('Error adding product', error.message)
+//     }
   
-
-  return productRef;
-}
+//   return productRef;
+// }
 
 
 
@@ -105,3 +93,4 @@ provider.setCustomParameters({provider: 'select_account'})
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;
+
