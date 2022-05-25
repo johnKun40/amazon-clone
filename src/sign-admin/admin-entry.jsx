@@ -6,6 +6,7 @@ import { firestore } from '../firebase';
 
 
 
+
 const AdminEntry = () => {
 
 
@@ -43,6 +44,14 @@ const AdminEntry = () => {
                     <FormInput  type={'url'} id='productImage'  name="productImage" label="Product Image(Url)"  required/>
                     <FormInput  type={'number'} id='productPrize'  name="productPrize" label="Product Prize" required/>
                     <FormInput  type={'text'} id='productDetails'  name="productDetails" label="Product Details"  width='100' height='100' required/>
+                        <label className='label-type' for="type">Select type of product:</label>
+                        <select className='product-type type-container' name='type' id='productType'>
+                            <option  name='productType'>Accessories</option>
+                            <option  name='productType'>Electronics</option>
+                            <option  name='productType'>Book</option>
+                            <option  name='productType'>Sport</option>
+                        </select>
+                    
 
                     <div className="button">
                         <CustomButton type={'submit'}>Enter Product</CustomButton>

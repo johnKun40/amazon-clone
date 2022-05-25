@@ -125,7 +125,7 @@ const Home = ({image_One}) => {
                 <Product id={102} image_One={'https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/February/Dashboard/computer120x._SY85_CB468850970_.jpg'} image_Two={'https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/August/DashboardCard/PS4_120X._SY85_CB438749318_.jpg'} image_Three={'https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/February/Dashboard/Baby120X._SY85_CB468850882_.jpg'}  image_Four={'https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/February/Dashboard/Toys120X._SY85_CB468851693_.jpg'} card_Title={'Shop by Category'} title_One={'Canon Camera'} title_Two={'Canon Camera'} title_Three={'Canon Camera'} title_Four={'Canon Camera'} />
 
                 {posts.length > 0 ? (
-                posts.slice(0, 6).map((post) =>
+                posts.slice(0, 6).map((post) => 
                 <ProductTwo id={post.key} image_One={post.productImage} card_Title={post.productName} card_Link={'Shop now'}/>)
                 ) : (<h1>no posts</h1>)
                 }
@@ -175,7 +175,7 @@ const Home = ({image_One}) => {
             <div className="home_row4">
 
             <div className="single_carousel" >
-            <h4 className="carousel_title">Popular products in pc internationally</h4>
+            <h4 className="carousel_title">Popular products in PC internationally</h4>
             <Slider {...settingsTwo}>
                 {
                     posts.length > 0 ? (

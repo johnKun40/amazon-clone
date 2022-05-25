@@ -8,3 +8,35 @@
 .buttons {
     justify-content: center;
 }
+
+.type-container{
+    position: relative;
+    margin: 45px 0;
+}
+
+.product-type{
+    background-color: #fff;
+    color: grey;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 10;
+    border: 1px solid grey;
+}
+
+.product-type:focus{
+outline: none;
+box-shadow: 1px 1px 1px 5px rgba(255, 153, 0, 0.4);
+    
+}
+
+.label-type{
+    font-size: 16px;
+    position: absolute;
+    pointer-events: none;
+    transition: 300ms ease all;
+    top: 590px;
+    left: 150px;
+}
