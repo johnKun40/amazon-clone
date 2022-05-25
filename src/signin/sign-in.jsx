@@ -48,8 +48,8 @@ class SignIn extends React.Component{
                     </div>
 
                 </form>
-                <Link to={'/admin-signin'} className="admin-link">
-                <a href="oo" >Sign in as an admin</a>
+                <Link to={'/admin-signin'} >
+                <a href="oo" className="admin-link" >Sign in as an admin</a>
                 </Link>
                 </div>
 

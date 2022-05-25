@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './Product.style.css';
 
 
-const ProductThree = ({id, carousel_link, carousel_title, image_One,image_Two,image_Three,image_Four,image_Five,image_Six,image_Seven,image_Eight}) => {
+const ProductThree = ({id, carousel_link, carousel_title, image_One}) => {
 
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
@@ -75,25 +75,25 @@ const ProductThree = ({id, carousel_link, carousel_title, image_One,image_Two,im
                             <img src={image_One} alt='oooo' className="carousel_image"/>
                         </div>
                         <div>
-                            <img src={image_Two} alt='oooo' className="carousel_image"/>
+                            <img src={image_One} alt='oooo' className="carousel_image"/>
                         </div>
                         <div>
-                            <img src={image_Three} alt='oooo' className="carousel_image"/>
+                            <img src={image_One} alt='oooo' className="carousel_image"/>
                         </div>
                         <div>
-                            <img src={image_Four} alt='oooo' className="carousel_image"/>
+                            <img src={image_One} alt='oooo' className="carousel_image"/>
                         </div>
                         <div>
-                            <img src={image_Five} alt='oooo' className="carousel_image"/>
+                            <img src={image_One} alt='oooo' className="carousel_image"/>
                         </div>
                         <div>
-                            <img src={image_Six} alt='oooo' className="carousel_image"/>
+                            <img src={image_One} alt='oooo' className="carousel_image"/>
                         </div>
                         <div>
-                            <img src={image_Seven} alt='oooo' className="carousel_image"/>
+                            <img src={image_One} alt='oooo' className="carousel_image"/>
                         </div>
                         <div>
-                            <img src={image_Eight} alt='oooo' className="carousel_image"/>
+                            <img src={image_One} alt='oooo' className="carousel_image"/>
                         </div>
                     </Slider>
             </div>

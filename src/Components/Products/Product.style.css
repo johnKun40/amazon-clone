@@ -51,6 +51,7 @@
 
 .Image_One {
   height: 500px;
+  cursor: pointer;
 }
 
 .Product_Five {
@@ -66,6 +67,7 @@
 .Image_Two {
   height: 113px;
   width: 140px;
+  cursor: pointer;
 }
 
 .Box_Three {
@@ -87,6 +89,7 @@
 .Image_Three {
   height: 320px;
   width: 270px;
+  cursor: pointer;
 }
 
 .Title_BoxTwo {
@@ -133,6 +136,7 @@
   width: 208px;
   height: 200px;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .single_carousel{
@@ -149,6 +153,7 @@
   height: 200px;
   width: 240px;
   object-fit: fill;
+  cursor: pointer;
 
 }
 

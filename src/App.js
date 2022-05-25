@@ -23,6 +23,7 @@ export default class App extends Component {
     } 
   }
 
+ 
   componentDidMount(){
   //   auth.onAuthStateChanged(user => {
   //     this.setState({currentUser:user})
@@ -40,16 +41,20 @@ this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
   if(userAuth) {
     const userRef = createUserProfileDocument(userAuth)
     
-    userRef.onSnapshot(snapShot => {
+     userRef.onSnapshot(querySnapshot =>
+    {
       this.setState({
         currentUser: {
-          id:snapShot.id,
-          ...snapShot.data()
+          id:querySnapshot.id,
+          ...querySnapshot.data()
         }
         
       })
+      
       console.log(this.state)
-    })
+    });
+  
+    
   }
   this.setState({currentUser: userAuth})
 })
