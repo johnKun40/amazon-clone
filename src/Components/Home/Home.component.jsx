@@ -105,6 +105,15 @@ const Home = ({image_One}) => {
 
     if (loading) {
         return <h1>loading firebase data...</h1>;
+
+    }
+
+    const displayElectronics = () => {
+      window.location.href = '/electronics';
+    }
+
+    const displayAccessories = () => {
+      window.location.href = '/accessories';
     }
     
 
@@ -119,10 +128,14 @@ const Home = ({image_One}) => {
 
             <div className="home-container">
             
-                <div className="home_row">
-                <Product id={101} image_One={"https://m.media-amazon.com/images/I/71fPSgwuPzL._AC_SY135_.jpg"} image_Two={'https://m.media-amazon.com/images/I/81A2PPbWgeL._AC_SY270_.jpg'} image_Three={'https://m.media-amazon.com/images/I/71EWRyqzw0L._AC_SY135_.jpg'}  image_Four={'https://m.media-amazon.com/images/I/91U1k4sVG1L._AC_SY135_.jpg'} card_Title={'Keep shopping for'} title_One={'Canon Camera'} title_Two={'Canon Camera'} title_Three={'Canon Camera'} title_Four={'Canon Camera'}/>
+                <div  className="home_row">
+                  <div onClick={displayElectronics}>
+                  <Product id={101} image_One={"https://m.media-amazon.com/images/I/71fPSgwuPzL._AC_SY135_.jpg"} image_Two={'https://m.media-amazon.com/images/I/71RD3vsjIYL._AC_UL320_.jpg'} image_Three={'https://m.media-amazon.com/images/I/61UdeL7aO-L._AC_UL320_.jpg'}  image_Four={'https://m.media-amazon.com/images/I/712yl2wTDbL._AC_SY195_.jpg'} card_Title={'Just Electronics'} title_One={'Canon Camera'} title_Two={'HP Laptop'} title_Three={'HP Printer'} title_Four={'Iphone 12'}/>
+                  </div>
 
-                <Product id={102} image_One={'https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/February/Dashboard/computer120x._SY85_CB468850970_.jpg'} image_Two={'https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/August/DashboardCard/PS4_120X._SY85_CB438749318_.jpg'} image_Three={'https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/February/Dashboard/Baby120X._SY85_CB468850882_.jpg'}  image_Four={'https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/February/Dashboard/Toys120X._SY85_CB468851693_.jpg'} card_Title={'Shop by Category'} title_One={'Canon Camera'} title_Two={'Canon Camera'} title_Three={'Canon Camera'} title_Four={'Canon Camera'} />
+                  <div onClick={displayAccessories}>
+                <Product id={102} image_One={'https://images-na.ssl-images-amazon.com/images/G/01/AmazonExports/Fuji/2019/February/Dashboard/computer120x._SY85_CB468850970_.jpg'} image_Two={'https://m.media-amazon.com/images/I/91NA-l8CgdL._AC_SY200_.jpg'} image_Three={'https://m.media-amazon.com/images/I/71iv4SW6InL._AC_SY200_.jpg'}  image_Four={'https://m.media-amazon.com/images/I/91GCnIOo0tL._AC_SX425_.jpg'} card_Title={'Shop for Accessories'} title_One={'Laptop Case'} title_Two={'Brown Bag'} title_Three={'Camera Bag'} title_Four={'Messenger Bag'} />
+                </div>
 
                 {posts.length > 0 ? (
                 posts.slice(0, 6).map((post) => 

@@ -1,0 +1,14 @@
+.display_row{
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+    justify-content: space-between;
+    margin-bottom: -10px;
+    background-color: transparent !important;
+    position: relative;
+}
+
+.display_title{
+    text-align: left;
+    padding-left: 2%;
+}

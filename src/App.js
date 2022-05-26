@@ -8,6 +8,8 @@ import SignPage from './Pages/sigin-in-and-sign-up-page';
 import { auth, createUserProfileDocument } from './firebase';
 import AdminSign from './sign-admin/sign-admin';
 import AdminEntry from './sign-admin/admin-entry';
+import ElectronicsDisplay from './Pages/electronics-display';
+import AccessoriesDisplay from './Pages/accessories-display';
 
 
 
@@ -73,6 +75,8 @@ this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
           <Route path='sign-page' element={<SignPage />} />
           <Route path='/admin-signin' element={<AdminSign />} />
           <Route path='/admin-entry' element={<AdminEntry />} />
+          <Route path='/electronics' element={<ElectronicsDisplay />}/>
+          <Route path='/accessories' element={<AccessoriesDisplay />}/>
         </Routes>
         <FooterComponent></FooterComponent>
       </div>
