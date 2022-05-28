@@ -10,6 +10,8 @@ import AdminSign from './sign-admin/sign-admin';
 import AdminEntry from './sign-admin/admin-entry';
 import ElectronicsDisplay from './Pages/electronics-display';
 import AccessoriesDisplay from './Pages/accessories-display';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -21,7 +23,9 @@ export default class App extends Component {
       super();
       this.state = {
           currentUser: null,
-          addedProduct: null
+          addedProduct: null,
+          
+
     } 
   }
 
@@ -63,13 +67,19 @@ this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
 
 
 
+
+
 }
  
   render () {
 
+    
+
     return (
+      
       <div className='App'>
-        <Header currentUser = {this.state.currentUser} />
+        <ToastContainer/>
+        <Header currentUser = {this.state.currentUser}  />
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='sign-page' element={<SignPage />} />

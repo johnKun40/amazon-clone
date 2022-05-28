@@ -51,7 +51,24 @@
   display: flex;
   z-index: 1;
   padding-left: 15px;
+  margin-bottom: 100px;
  
+}
+
+
+.cart-button{
+  margin-top: 0;
+  padding: 6px 20px;
+  border-radius: 100px;
+  /* height: 10px; */
+  border: none;
+  background-color: rgb(255, 153, 0);
+  cursor: pointer;
+}
+
+.cart-button:hover{
+  background-color: rgb(187, 114, 4);
+  color: #fff;
 }
 
 

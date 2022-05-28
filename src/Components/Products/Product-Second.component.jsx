@@ -1,15 +1,15 @@
 import React from 'react';
 import './Product.style.css';
+//import CartButton from '../../cart-button';
 
-const ProductTwo = ({id, card_Title, image_One, card_Link }) =>{
+const ProductTwo = ({id, card_Title, image_One}) =>{
    return(
     <div className='Main_DisplayOne'>
-        <div className='Box_Three' key={id}>
+        <div className='Box_Three' id={id}>
             <h3 className='Title_BoxThree'>{card_Title}</h3>
             <div className='Product_Six'>
                 <img src={image_One} alt='ooo' className='Image_Three'/>
             </div>
-            <a className='Shop_Now' href='ooooo'>{card_Link}</a>
         </div>
     </div>
    ) 

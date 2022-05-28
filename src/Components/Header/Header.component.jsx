@@ -5,9 +5,14 @@ import { Link } from "react-router-dom";
 import { auth } from '../../firebase';
 import './Header.style.css';
 
+
+
 //import App from "../../App";
 
 function Header({currentUser}) {
+
+    
+
     return(
         <div className="header">
             <Link to={'/'}>

@@ -8,9 +8,14 @@ import { firestore } from "../../firebase";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import CartButton from "../../cart-button";
+//import { useDispatch } from "react-redux";
+//import { addToCart } from "../../features/cartSlice";
 // import { render } from "@testing-library/react";
 
-const Home = ({image_One}) => {
+const Home = () => {
+
+  //const dispatch = useDispatch();
 
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
@@ -94,7 +99,7 @@ const Home = ({image_One}) => {
             querySnapshot.forEach((doc) => {
                 getPostsFromFirebase.push({
                     ...doc.data(),
-                    key: doc.id
+                    id : doc.id
                 });
             });
             setPosts(getPostsFromFirebase);
@@ -115,6 +120,9 @@ const Home = ({image_One}) => {
     const displayAccessories = () => {
       window.location.href = '/accessories';
     }
+
+    
+    
     
 
     
@@ -139,7 +147,10 @@ const Home = ({image_One}) => {
 
                 {posts.length > 0 ? (
                 posts.slice(0, 6).map((post) => 
-                <ProductTwo id={post.key} image_One={post.productImage} card_Title={post.productName} card_Link={'Shop now'}/>)
+                <div>
+                <ProductTwo id={post.id} image_One={post.productImage} card_Title={post.productName} />
+                 <CartButton product={post}/>
+                </div>)
                 ) : (<h1>no posts</h1>)
                 }
 
@@ -155,8 +166,10 @@ const Home = ({image_One}) => {
                         {
                         posts.length > 0 ? (
                             posts.slice(7, 15).map((post) =>
-                                <div>
+                                <div id={post.id}>
                                     <img src={post.productImage} alt='oooo' className="carousel_image"/>
+                                    <CartButton product={post}/>
+                                    
                                 </div>)
                             ) : (<h1>no posts</h1>)
                         }
@@ -174,8 +187,9 @@ const Home = ({image_One}) => {
                             {
                             posts.length > 0 ? (
                                 posts.slice(16, 24).map((post) =>
-                                    <div>
+                                    <div id={post.id} >
                                         <img src={post.productImage} alt='oooo' className="carousel_image"/>
+                                        <CartButton product={post}/>
                                     </div>)
                                 ) : (<h1>no posts</h1>)
                             }
@@ -193,10 +207,11 @@ const Home = ({image_One}) => {
                 {
                     posts.length > 0 ? (
                         posts.slice(25,29).map((post) =>
-                        <div>
+                        <div id={post.id} >
                             <img src={post.productImage} alt="ooo" className="carousel__imageTwo" />
                             <span><p>{post.productName}</p></span>
                             <span><p>${post.productPrize}</p></span>
+                            <CartButton product={post}/>
                             
                         </div>
                         )
@@ -208,7 +223,10 @@ const Home = ({image_One}) => {
 
           {posts.length > 0 ? (
                 posts.slice(30, 31).map((post) =>
-                <ProductTwo id={post.key} image_One={post.productImage} card_Title={post.productName} card_Link={'Shop now'}/>)
+                <div id={post.id} >
+                <ProductTwo id={post.key} image_One={post.productImage} card_Title={post.productName} />
+                <CartButton product={post}/>
+                </div>)
                 ) : (<h1>no posts</h1>)
             }
 
@@ -218,12 +236,13 @@ const Home = ({image_One}) => {
                 {
                     posts.length > 0 ? (
                         posts.slice(32,34).map((post) =>
-                        <div>
+                        <div id={post.id} >
                             <img src={post.productImage} alt="ooo" className="carousel__imageTwo" />
                             <span><p>{post.productName}</p></span>
                             <span><p>${post.productPrize}</p></span>
-                            
+                            <CartButton product={post}/>
                         </div>
+                        
                         )
                     ) : (<h1>no posts</h1>)
                 } 
@@ -233,7 +252,10 @@ const Home = ({image_One}) => {
 
           {posts.length > 0 ? (
                 posts.slice(36, 37).map((post) =>
-                <ProductTwo id={post.key} image_One={post.productImage} card_Title={post.productName} card_Link={'Shop now'}/>)
+                <div>
+                <ProductTwo id={post.id} image_One={post.productImage} card_Title={post.productName} />
+                <CartButton product={post}/>
+                </div>)
                 ) : (<h1>no posts</h1>)
             }
 
