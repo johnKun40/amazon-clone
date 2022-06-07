@@ -3,12 +3,32 @@ import { firestore } from "../firebase";
 import { useParams } from "react-router-dom";
 import './details-page.css';
 import CartButton from "../cart-button";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cartSlice";
 
 const DetailsPage = () => {
+
+
 
     const [ arrs] = useState([]);
     const [loading, setLoading] = useState(true);
     const params = useParams();
+
+    const dispatch = useDispatch();
+   
+
+
+    const handleAddToCart = (post) => {
+        dispatch(addToCart(post))
+
+        firestore.collection('cart').doc(params.id).set({
+          merge: true,
+          productName : post.productName,
+          productPrize: post.productPrize,
+          productImage: post.productImage,
+          productDetials: post.productDetails  })
+  
+      }
     
    useEffect (() => {
 
@@ -48,7 +68,7 @@ const DetailsPage = () => {
                        <p className="product-details">{arr.productDetails}</p> 
                            <span>Price: ${arr.productPrize}</span>
 
-                          <p className="button"><CartButton/></p> 
+                          <p className="button"><button onClick={() => handleAddToCart(arr)} className='cart-button'>Add to Cart</button></p> 
                        
 
                     </div>
