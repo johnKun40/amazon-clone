@@ -50,25 +50,18 @@
   justify-content: space-between;
   display: flex;
   z-index: 1;
+  flex-wrap: wrap;
   padding-left: 15px;
   margin-bottom: 100px;
- 
 }
 
 
-.cart-button{
-  margin-top: 0;
-  padding: 6px 20px;
-  border-radius: 100px;
-  /* height: 10px; */
-  border: none;
-  background-color: rgb(255, 153, 0);
+.cart-button1 {
   cursor: pointer;
+  margin-top: -18px;
+  
 }
 
-.cart-button:hover{
-  background-color: rgb(187, 114, 4);
-  color: #fff;
-}
+
 
 

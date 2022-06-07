@@ -1,5 +1,6 @@
 import React  from 'react';
 import './cart-button.css';
+import { firestore } from './firebase';
 
 import { useDispatch } from "react-redux";
 import { addToCart } from './features/cartSlice';
@@ -11,6 +12,8 @@ const CartButton = ({product}) => {
 
     const handleAddToCart = (post) => {
         dispatch(addToCart(post))
+
+        // firestore.collection('cart').doc(`${post.id}`).set({merge: true })
   
       }
 
@@ -22,6 +25,7 @@ const CartButton = ({product}) => {
         
     // };
 
+    
 
 
   return (

@@ -24,6 +24,8 @@ const AdminEntry = () => {
 
             return accumulator;
         }, {});
+        
+        
 
         firestore.collection("products").add(formData).then(() => {
             window.location.reload();

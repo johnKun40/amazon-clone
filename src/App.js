@@ -7,9 +7,11 @@ import './App.css';
 import SignPage from './Pages/sigin-in-and-sign-up-page';
 import { auth, createUserProfileDocument } from './firebase';
 import AdminSign from './sign-admin/sign-admin';
+import DetailsPage from './Pages/details-page';
 import AdminEntry from './sign-admin/admin-entry';
 import ElectronicsDisplay from './Pages/electronics-display';
 import AccessoriesDisplay from './Pages/accessories-display';
+import ScrollToTop from './Components/scrollToTheTop';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -80,14 +82,17 @@ this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
       <div className='App'>
         <ToastContainer/>
         <Header currentUser = {this.state.currentUser}  />
+        <ScrollToTop>
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='sign-page' element={<SignPage />} />
+          <Route exact path="/details-page/:id" element={  <DetailsPage /> } />
           <Route path='/admin-signin' element={<AdminSign />} />
           <Route path='/admin-entry' element={<AdminEntry />} />
           <Route path='/electronics' element={<ElectronicsDisplay />}/>
           <Route path='/accessories' element={<AccessoriesDisplay />}/>
         </Routes>
+        </ScrollToTop>
         <FooterComponent></FooterComponent>
       </div>
     )
