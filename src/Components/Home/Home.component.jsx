@@ -8,11 +8,11 @@ import { firestore } from "../../firebase";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import CartButton from "../../cart-button";
 import { useNavigate } from "react-router-dom";
-//import { useDispatch } from "react-redux";
-//import { addToCart } from "../../features/cartSlice";
-// import { render } from "@testing-library/react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cartSlice";
+import { useParams } from "react-router-dom";
+
 
 const Home = () => {
 
@@ -95,6 +95,22 @@ const Home = () => {
     const [loading, setLoading] = useState(true);
     const [posts, setPosts] = useState([]);
 
+    const dispatch = useDispatch();
+    const params = useParams();
+
+
+    const handleAddToCart = (post) => {
+        dispatch(addToCart(post))
+
+        firestore.collection('cart').doc(params.id).set({
+          merge: true,
+          productName : post.productName,
+          productPrize: post.productPrize,
+          productImage: post.productImage,
+          productDetials: post.productDetails  })
+  
+      }
+
     useEffect(() => {
         const getPostsFromFirebase = [];
         const subscriber = firestore.collection("products").onSnapshot((querySnapshot) =>
@@ -161,9 +177,12 @@ const Home = () => {
 
                 {posts.length > 0 ? (
                 posts.slice(0, 6).map((post) => 
-                <div onClick={() => history(`/details-page/${post.id}`)}>
-                <ProductTwo id={post.id} prize={post.productPrize} image_One={post.productImage} card_Title={post.productName} post ={post} />
-                <CartButton product={post}/>  
+                <div>
+                  <div onClick={() => history(`/details-page/${post.id}`)}>
+                  <ProductTwo id={post.id} prize={post.productPrize} image_One={post.productImage} card_Title={post.productName} post ={post} />
+                  </div>
+                <button onClick={() => handleAddToCart(post)} className='cart-button'>Add to Cart</button>
+             
                 </div>)
                 ) : (<h1>no posts</h1>)
                 }
@@ -180,10 +199,14 @@ const Home = () => {
                         {
                         posts.length > 0 ? (
                             posts.slice(7, 15).map((post) =>
-                                <div onClick={() => history(`/details-page/${post.id}`)}>
+                                <div >
+                                  <div onClick={() => history(`/details-page/${post.id}`)}>
                                     <img src={post.productImage} alt='oooo' className="carousel_image"/>
-                                    <CartButton product={post}/>  
+                                  </div>
+                                    <button onClick={() => handleAddToCart(post)} className='cart-button'>Add to Cart</button>
+                                    
                                 </div>)
+                                
                             ) : (<h1>no posts</h1>)
                         }
                     </Slider>
@@ -200,9 +223,12 @@ const Home = () => {
                             {
                             posts.length > 0 ? (
                                 posts.slice(16, 24).map((post) =>
-                                    <div onClick={() => history(`/details-page/${post.id}`)} >
+                                    <div>
+                                      <div onClick={() => history(`/details-page/${post.id}`)}>
                                         <img src={post.productImage} alt='oooo' className="carousel_image"/>
-                                        <CartButton product={post}/>
+                                        </div>
+                                        <button onClick={() => handleAddToCart(post)} className='cart-button'>Add to Cart</button>
+                                        
                                     </div>)
                                 ) : (<h1>no posts</h1>)
                             }
@@ -215,16 +241,18 @@ const Home = () => {
             <div className="home_row4">
 
             <div className="single_carousel" >
-            <h4 className="carousel_title">Popular products in PC internationally</h4>
+            <h4 className="carousel_title">Popular products seen internationally</h4>
             <Slider {...settingsTwo}>
                 {
                     posts.length > 0 ? (
                         posts.slice(25,29).map((post) =>
-                        <div onClick={() => history(`/details-page/${post.id}`)} >
+                        <div>
+                          <div onClick={() => history(`/details-page/${post.id}`)}>
                             <img src={post.productImage} alt="ooo" className="carousel__imageTwo" />
                             <span><p>{post.productName}</p></span>
                             <span><p>${post.productPrize}</p></span>
-                            <CartButton product={post}/>
+                          </div>
+                            <button onClick={() => handleAddToCart(post)} className='cart-button'>Add to Cart</button>
                         </div>
                         )
                     ) : (<h1>no posts</h1>)
@@ -233,28 +261,42 @@ const Home = () => {
             </Slider>
           </div>
 
-          {posts.length > 0 ? (
-                posts.slice(30, 31).map((post) =>
-                <div onClick={() => history(`/details-page/${post.id}`)} >
-                <ProductTwo id={post.key} image_One={post.productImage} card_Title={post.productName} />
-                <div className="cart-button1">
-                <CartButton  product={post}/>
-                </div>
-                </div>)
-                ) : (<h1>no posts</h1>)
-            }
+          <div className="single_carousel" >
+            <h4 className="carousel_title">Popular products in PC internationally</h4>
+            <Slider {...settingsTwo}>
+                {
+                    posts.length > 0 ? (
+                        posts.slice(30,32).map((post) =>
+                        <div>
+                          <div onClick={() => history(`/details-page/${post.id}`)}>
+                            <img src={post.productImage} alt="ooo" className="carousel__imageTwo" />
+                            <span><p>{post.productName}</p></span>
+                            <span><p>${post.productPrize}</p></span>
+                          </div>
+                            <button onClick={() => handleAddToCart(post)} className='cart-button'>Add to Cart</button>
+                        </div>
+                        )
+                    ) : (<h1>no posts</h1>)
+                } 
+              
+            </Slider>
+          </div>
+
+          
 
           <div className="single_carousel" >
             <h4 className="carousel_title">Popular products in Nigeria internationally</h4>
             <Slider {...settingsTwo}>
                 {
                     posts.length > 0 ? (
-                        posts.slice(32,34).map((post) =>
-                        <div onClick={() => history(`/details-page/${post.id}`)} >
+                        posts.slice(33,36).map((post) =>
+                        <div>
+                          <div  onClick={() => history(`/details-page/${post.id}`)} >
                             <img src={post.productImage} alt="ooo" className="carousel__imageTwo" />
                             <span><p>{post.productName}</p></span>
                             <span><p>${post.productPrize}</p></span>
-                            <CartButton product={post}/>
+                          </div>
+                            <button onClick={() => handleAddToCart(post)} className='cart-button'>Add to Cart</button>
                         </div>
                         
                         )
@@ -264,16 +306,26 @@ const Home = () => {
             </Slider>
           </div>
 
-          {posts.length > 0 ? (
-                posts.slice(36, 37).map((post) =>
-                <div onClick={() => history(`/details-page/${post.id}`)}>
-                <ProductTwo id={post.id} image_One={post.productImage} card_Title={post.productName} />
-                <div className="cart-button1">
-                <CartButton product={post}/>
-                </div>
-                </div>)
-                ) : (<h1>no posts</h1>)
-            }
+          <div className="single_carousel" >
+            <h4 className="carousel_title">Popular products in Countries near you</h4>
+            <Slider {...settingsTwo}>
+                {
+                    posts.length > 0 ? (
+                        posts.slice(37,40).map((post) =>
+                        <div>
+                          <div onClick={() => history(`/details-page/${post.id}`)}>
+                            <img src={post.productImage} alt="ooo" className="carousel__imageTwo" />
+                            <span><p>{post.productName}</p></span>
+                            <span><p>${post.productPrize}</p></span>
+                          </div>
+                            <button onClick={() => handleAddToCart(post)} className='cart-button'>Add to Cart</button>
+                        </div>
+                        )
+                    ) : (<h1>no posts</h1>)
+                } 
+              
+            </Slider>
+          </div>
 
 
             </div>

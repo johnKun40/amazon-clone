@@ -4,16 +4,18 @@ import { firestore } from './firebase';
 
 import { useDispatch } from "react-redux";
 import { addToCart } from './features/cartSlice';
+import { useParams } from "react-router-dom";
 
-const CartButton = ({product}) => {
+const CartButton = ({product, productDetails, productPrize, productImage, productName}) => {
 
     const dispatch = useDispatch();
+    const params = useParams();
 
 
     const handleAddToCart = (post) => {
         dispatch(addToCart(post))
 
-        // firestore.collection('cart').doc(`${post.id}`).set({merge: true })
+        firestore.collection('cart').doc(params.id).set({merge: true, productName : {productName}, productPrize: {productPrize}, productImage: {productImage}, productDetails: {productDetails} })
   
       }
 
@@ -24,8 +26,6 @@ const CartButton = ({product}) => {
     //     setCart([...cart, post]);
         
     // };
-
-    
 
 
   return (

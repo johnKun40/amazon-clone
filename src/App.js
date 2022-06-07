@@ -12,6 +12,7 @@ import AdminEntry from './sign-admin/admin-entry';
 import ElectronicsDisplay from './Pages/electronics-display';
 import AccessoriesDisplay from './Pages/accessories-display';
 import ScrollToTop from './Components/scrollToTheTop';
+import Cart from './Pages/cart';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -24,8 +25,7 @@ export default class App extends Component {
     constructor(){
       super();
       this.state = {
-          currentUser: null,
-          addedProduct: null,
+          currentUser: null
           
 
     } 
@@ -87,6 +87,7 @@ this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
           <Route path='/' element={<Home />}/>
           <Route path='sign-page' element={<SignPage />} />
           <Route exact path="/details-page/:id" element={  <DetailsPage /> } />
+          <Route exact path="/cart-page" element={  <Cart /> } />
           <Route path='/admin-signin' element={<AdminSign />} />
           <Route path='/admin-entry' element={<AdminEntry />} />
           <Route path='/electronics' element={<ElectronicsDisplay />}/>

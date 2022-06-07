@@ -3,13 +3,16 @@ import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Link } from "react-router-dom";
 import { auth } from '../../firebase';
+import { useNavigate } from "react-router-dom";
 import './Header.style.css';
 
 
 
 //import App from "../../App";
 
-function Header({currentUser}) {
+function Header({currentUser, posts}) {
+
+    let history = useNavigate();
 
     
 
@@ -47,10 +50,14 @@ function Header({currentUser}) {
                     <span className="navBar__optionOne">Fit</span>
                     <span className="navBar__optionTwo">Prime</span>
                 </div>
-                <div className="navBar__option1">
+                {
+
+                <div className="navBar__option1" onClick={() => history(`/cart-page`)}>
                     <ShoppingCartOutlinedIcon className="header__cartIcon"/>
-                    <span className="navBar__counter">0</span>
+                    <span className="navBar__counter">{posts}</span>
                 </div>
+
+                }
             </div>
             
         </div>

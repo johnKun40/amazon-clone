@@ -1,0 +1,21 @@
+.cart-row{
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+    justify-content: center;
+    
+}
+
+.delete-button{
+    padding: 6px 20px;
+    border-radius: 100px;
+    /* height: 10px; */
+    border: none;
+    background-color: rgb(255, 153, 0);
+    cursor: pointer;
+}
+
+.delete-button:hover{
+    background-color: rgb(187, 114, 4);
+    color: #fff;
+}
